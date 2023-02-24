@@ -1,3 +1,8 @@
+// Farhana Sultana 
+// farhana.sultana79@myhunter.cuny.edu
+// Csci 235
+// project 2
+
 #include "Manual.hpp"
 #include <regex>
 
