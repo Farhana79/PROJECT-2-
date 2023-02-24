@@ -1,3 +1,8 @@
+// Farhana Sultana 
+// farhana.sultana79@myhunter.cuny.edu
+// Csci 235
+// project 2
+
 #ifndef TEXT_BOOK_HPP
 #define TEXT_BOOK_HPP
 #include "Book.hpp"
