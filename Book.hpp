@@ -1,78 +1,83 @@
 // Farhana Sultana 
 // farhana.sultana79@myhunter.cuny.edu
 // Csci 235
-// project 1
+// project 2
 
-#ifndef BOOK_H
-#define BOOK_H
-#include<string>
-using namespace std;
+#ifndef BOOK_HPP_
+#define BOOK_HPP_
+#include <iostream>
+#include <string>
 
+class Book{
+	public:
+		 /**
+      	Default constructor.
+      	Default-initializes all private members. Booleans are default-initialized to False.
+   		*/
+		Book()=default;
 
-class Book
-{
-private:
-	string title;
-	string author;
-	int pageCount;
-	bool digitallyAvailable;
+		/**
+		 Parameterized constructor.
+		@param      : The title of the book (a string)
+		@param      : The author of the book (a string)
+		@param      : The number of pages in the book (a positive int)
+		@param      : A flag indicating whether the book is in digital form (a Boolean),
+						with default value False
+		@post       : The private members are set to the values of the corresponding
+parameters.
+		*/
+		Book(std::string title, std::string author, int page_count, bool is_digital_ = false);
 
-public:
-	/**
-	 Default constructor.
-	 Default-initializes all private members. Booleans are default-initialized to False.
-  */
-	Book();
+		/**
+			 @return : the title of the Book
+		*/
+		std::string getTitle() const;  //returns title of book
 
+		/**
+			 @return : the author of the Book
+		*/
+		std::string getAuthor() const;  //returns author of book
 
-	/**
-	   Parameterized constructor.
-	   @param      : The title of the book (a string)
-	   @param      : The author of the book (a string)
-	   @param      : The number of pages in the book (a positive int)
-	   @param      : A flag indicating whether the book is in digital form (a Boolean),
-					 with default value False
-	   @post       : The private members are set to the values of the corresponding parameters.
-	 */
-	Book(string title, string author, int numPages, bool digitallyAvailable = false);
-	
-	
-	/**
-   @param  : the title of the Book
-   @post   : sets the Book's title to the value of the parameter
- */
-	void setTitle(const string& title);
-	/**
-	 @return : the title of the Book
-  */
-	string getTitle() const;
-	
-	/**
-	@param  : the name of the author of the Book
-	@post   : sets the Book's author to the value of the parameter
-  */
-	void setAuthor(const string& author);
-	
-	/**
-	  @return : the author of the Book
-   */
-	string getAuthor() const;
-	
-	/**
-   @param  : a positive integer page count
-   @pre    : page count > 0 - books cannot have a negative number of pages
-   @post   : sets the page count to the value of the parameter
- */
-	void setPageCount(const int numPages);
-	/**
-	  @return : the page count
-   */
-	int getPageCount() const;
+		/**
+			 @return : the page count
+		*/
+		int getPageCount() const;  //returns page count of book
 
-	/**
-  @post   : sets the digital flag to true
- */
-	void setDigital();
-	bool isDigital() ;
+		/**
+			@return : true if the book is available in digital form, false otherwise
 
+			Note: this is an accessor function and must follow the same convention as
+			all accessor functions even if it is not called getDigital
+		*/
+		bool isDigital() const;  //returns true if book is digital
+
+		/**
+		 	@param  : a reference to title of the Book
+			@post   : sets the Book's title to the value of the parameter
+		*/
+		void setTitle(const std::string &title);
+
+		/**
+			@param  : a reference to the name of the author of the Book
+			@post   : sets the Book's author to the value of the parameter
+		*/
+		void setAuthor(const std::string &author);
+		/**
+			@param  : a reference to a positive integer page count
+			@pre    : page count > 0 - books cannot have a negative number of pages
+			@post   : sets the page count to the value of the parameter
+		*/
+    	void setPageCount(const int &page_count);
+
+		/**
+		 @post   : sets the digital flag to true
+		*/
+		void setDigital();
+	private:
+	std::string title_; // The title of the book (a string)
+    std::string author_; // The author of the book (a string)
+    int page_count_; // The page count (an integer)
+    bool is_digital_; // A flag indicating whether the book is available in digital form (a Boolean)
 };
+
+#endif
