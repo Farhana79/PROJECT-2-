@@ -1,3 +1,8 @@
+// Farhana Sultana 
+// farhana.sultana79@myhunter.cuny.edu
+// Csci 235
+// project 2
+
 #include "TextBook.hpp"
 
 TextBook::TextBook(std::string title, std::string author, int page_count, std::string subject,
